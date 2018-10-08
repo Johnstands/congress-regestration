@@ -1,0 +1,49 @@
+{
+  "name": "yp-camp",
+  "version": "0.1.0",
+  "private": true,
+  "author": "John Carlo Cahimat",
+  "description": "App for YP Camps",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "material-ui": "^0.20.0",
+    "node-notifier": "^5.1.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.0.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build --em.main=build/electron.js",
+    "electron-release": "build --em.main=build/electron.js --publish=always",
+    "preelectron-pack": "yarn build",
+    "preelectron-release": "yarn build"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "electron": "^1.7.10",
+    "electron-builder": "^19.49.0",
+    "wait-on": "^2.0.2"
+  },
+  "build": {
+    "appId": "com.fleetcatbase.electron-cra",
+    "files": [
+      "build/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
